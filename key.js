@@ -1,2 +1,2 @@
-const API_KEYY = 'HELL NAAHH!!!';
-const GEO_KEYY = '6335906af9894bf98ae9b80b586ade27';
+const API_KEY = '6a324a9ede3f2f6aad8c9a9183c3969b';
+const GEO_KEY = 'a09b3629a6b3403cae9c9a9fb429d4c2';
