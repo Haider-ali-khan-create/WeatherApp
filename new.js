@@ -15,7 +15,7 @@ const fetchWeather = ()=> {
     if(city===''){
         city='prayagraj';
     };
-    let url=`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=4&appid=${API_KEY}`;
+    let url=`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=4&appid=${API_KEY}`;
     let geos=`https://api.geoapify.com/v1/geocode/search?text=${city}&format=json&apiKey=${GEO_KEY}`;
     hai(url,geos);
 }
