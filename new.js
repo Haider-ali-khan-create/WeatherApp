@@ -43,7 +43,8 @@ const hai= async (url,geos)=>{
     let weatherLink=await fetch(weather);
     let data2=await weatherLink.json();
     let climateDes=data2.weather[0].description;
-    climate.innerText=climateDes;
+    let captal = climateDes.replace(climateDes[0], climateDes[0].toUpperCase());
+    climate.innerText=captal;
     let climateBag=data2.weather[0].main;
     let tempUnit=`${(data2.main.temp-273.15).toFixed(1)}°`;
     temp.innerText=tempUnit;
