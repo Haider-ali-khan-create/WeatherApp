@@ -49,16 +49,17 @@ const hai= async (url,geos)=>{
     let tempUnit=`${(data2.main.temp-273.15).toFixed(1)}°`;
     temp.innerText=tempUnit;
     //animation
-    bg.style.opacity = 0;
-    setTimeout(() => {
-        bg.className = '';
-        if (climateBag === 'Clear')                                  bg.className = 'clear';
-        else if (climateBag === 'Clouds')                            bg.className = 'cloudy';
-        else if (climateBag === 'Rain' || climateBag === 'Drizzle')  bg.className = 'rainy';
-        else if (climateBag === 'Snow')                              bg.className = 'snowy';
-        else                                                         bg.className = 'stormy';
-        bg.style.opacity=1;
-    }, 600);
+    
+    let type;
+    if (climateBag === 'Clear')                                  type = 'clear';
+    else if (climateBag === 'Clouds')                            type = 'cloudy';
+    else if (climateBag === 'Rain' || climateBag === 'Drizzle')  type = 'rainy';
+    else if (climateBag === 'Snow')                              type = 'snowy';
+    else if (climateBag === 'Thunderstorm')                      type = 'stormy';
+    else                                                         type = 'cloudy';   // Mist, Haze, Fog, Smoke, Dust
+
+    bg.dataset.weather = type;
+
 }
 button.addEventListener("pointerup",fetchWeather);
 loc.addEventListener("keydown", (e)=>{
